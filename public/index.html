@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cert Inspector</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-row">
+      <h1>Cert Inspector</h1>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-icon-dark">&#9790;</span>
+        <span class="theme-icon-light">&#9728;</span>
+      </button>
+    </div>
+    <p class="subtitle">Inspect TLS certificates &amp; DNS for every domain a page contacts</p>
+  </header>
+
+  <main>
+    <form id="inspect-form">
+      <div class="input-row">
+        <input type="text" id="url-input" placeholder="example.com" required autofocus>
+        <button type="submit" id="submit-btn">Inspect</button>
+      </div>
+    </form>
+
+    <div id="error" class="error hidden"></div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p id="loading-text">Launching headless browser&hellip;</p>
+    </div>
+
+    <div id="results" class="hidden">
+      <div class="meta-row">
+        <span id="cache-indicator"></span>
+        <span id="inspected-at"></span>
+        <button id="clear-cache-btn" type="button" class="hidden">Clear Cache</button>
+        <button id="export-btn" type="button">Export JSON</button>
+      </div>
+
+      <div id="summary-bar" class="summary-bar"></div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="detail">Detailed</button>
+        <button class="tab" data-tab="summary">Summary</button>
+        <button class="tab" data-tab="timeline">Timeline</button>
+      </div>
+
+      <div id="view-detail" class="view active"></div>
+      <div id="view-summary" class="view hidden"></div>
+      <div id="view-timeline" class="view hidden"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Powered by Cloudflare Workers &amp; Browser Rendering &middot; Inspired by <a href="https://github.com/shanselman/cert-inspector" target="_blank" rel="noopener">shanselman/cert-inspector</a></p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

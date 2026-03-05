@@ -1,0 +1,17 @@
+name = "cert-inspector"
+main = "src/index.ts"
+# account_id = "YOUR_ACCOUNT_ID"
+compatibility_date = "2025-09-15"
+compatibility_flags = ["nodejs_compat"]
+
+[browser]
+binding = "BROWSER"
+
+# Run: npx wrangler kv namespace create CACHE
+# Then paste the id below
+[[kv_namespaces]]
+binding = "CACHE"
+id = "YOUR_KV_NAMESPACE_ID"
+
+[assets]
+directory = "./public"
