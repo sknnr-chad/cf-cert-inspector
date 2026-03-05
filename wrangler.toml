@@ -1,6 +1,6 @@
 name = "cert-inspector"
 main = "src/index.ts"
-# account_id = "YOUR_ACCOUNT_ID"
+account_id = "52f60845f3c32e5fb448ef250b12a65a"
 compatibility_date = "2025-09-15"
 compatibility_flags = ["nodejs_compat"]
 
@@ -11,7 +11,7 @@ binding = "BROWSER"
 # Then paste the id below
 [[kv_namespaces]]
 binding = "CACHE"
-id = "YOUR_KV_NAMESPACE_ID"
+id = "1aa550d7148047b0b97bb14fe3def75c"
 
 [assets]
 directory = "./public"
