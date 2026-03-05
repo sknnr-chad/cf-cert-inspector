@@ -345,7 +345,7 @@ main {
 .domain-card .card-expiry { font-size: 0.8rem; margin-top: 0.25rem; }
 
 /* Timeline */
-.timeline-container { overflow-x: auto; }
+.timeline-container { overflow: visible; padding-top: 0.5rem; }
 .timeline-row {
   display: flex;
   align-items: center;
@@ -372,6 +372,8 @@ main {
   height: 100%;
   border-radius: 4px;
   min-width: 2px;
+  position: relative;
+  z-index: 1;
 }
 .timeline-bar.healthy { background: var(--healthy); }
 .timeline-bar.expiring { background: var(--expiring); }
